@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title> 선택자 </title>  
+<script src="../jquery/jquery-3.6.0.min.js"></script>
+<script>
+    $(function(){
+        $("#txt").css("color", "red")
+
+        // 동시에 적용 가능
+        $("h1, #tit3").css("background-color", "aqua").css("border", "2px solid red")
+
+        /*
+            * 부모 요소 선택자
+                - $("요소 선택").parent();
+            * 하위 요소 선택자
+                - $("기준 요소 선택1 요소 선택2")
+            * 자식 요소 선택자
+                - $("요소 선택 > 자식 요소 선택")
+                - $("요소 선택").children("자식 요소 선택")
+                - $("요소 선택").children()
+            * 이전/다음 요소 선택자
+                - $("요소 선택").prev() / .prevAll()
+                - $("요소 선택").next() / .nextAll()
+                - $("요소 선택1 + 요소 선택2")
+            * 전체 형제 요소 선택자
+                - $("요소 선택").siblings()
+            * 탐색 선택자
+                - $("요소 선택:first") / $("요소 선택:first-of-type")
+                - $("요소 선택:last") / $("요소 선택:last-of-type")
+                - $("요소 선택:even")
+                - $("요소 선택:odd")
+                - $("요소 선택:eq(index)") / - $("요소 선택:lt(index)") / - $("요소 선택:gt(index)")
+                - $("요소 선택:nth-child(숫자)") / $("요소 선택:nth-child(숫자n)") / $("요소 선택:nth-last-child(숫자)")
+                - $("요소 선택:only-child")
+                - $("요소 선택").slice(start index, end index)
+        */
+    })
+</script>
+</head>
+<body>
+  <p id="txt">내용</p>
+
+  <h1>제이쿼리</h1>
+  <h2>선택자</h2>
+  <h3 id="tit3">직접 선택자</h3>
+  <h3>인접 선택자</h3>
+</body>
+</html>

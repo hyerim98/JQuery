@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title> 객체 조작 및 생성 </title>  
+<script src="js/jquery.js"></script>
+<script>
+	$(function( ){
+        // 선택한 요소 다음에 새 요소를 생성
+		$("#wrap p:eq(2)").after("<p>After</p>");
+		$("<p>insertAfter</p>").insertAfter("#wrap p:eq(1)");
+
+        // 선택한 요소 이전에 새 요소를 생성
+		$("#wrap p:eq(1)").before("<p>Before</p>");
+		$("<p>insertBefore</p>").insertBefore("#wrap p:eq(0)");
+
+        // prepend
+        $("<li>appendTo</li>").appendTo("#listZone"); // 선택한 요소의 맨 뒤에 새 요소를 생성
+		$("#listZone").prepend("<li>prepend</li>"); // 선택한 요소 맨 앞에 새 요소를 생성
+	});
+</script>
+</head>
+<body>
+	<div id="wrap">
+		<p>내용1</p>
+		<p>내용2</p>
+		<p>내용3</p>
+	</div>
+
+    <ul id="listZone">
+		<li>리스트</li>
+	</ul>
+</body>
+</html>

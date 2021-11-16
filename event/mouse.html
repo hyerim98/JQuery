@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title> 이벤트 </title>  
+<script src="../jquery/jquery-3.6.0.min.js"></script>
+<script>
+$(function( ) {
+	$(".btn1").on({
+		"mouseover" : function( ) { // 마우스 포인터를 올리면
+			$(".txt1")
+			.css({"background-color":"yellow"});
+		},
+		"mouseout" : function( ) { // 마우스 포인터가 벗어나면
+			$(".txt1")
+			.css({"background":"none"});
+		}
+	});
+
+	$(".btn2").hover(function( ) {
+		$(".txt2")
+		.css({"background-color":"aqua"});
+	}, function(){
+		$(".txt2")
+		.css({"background":"none"});
+	});
+
+
+    $("#box_1").on("mouseout", function(){ // 해당 요소에서 마우스 포인터가 벗어나면 이벤트 발생
+		$("#box_1")
+		.css({"background-color":"yellow"});
+	});
+	
+	$("#box_2").on("mouseleave", function(){ // 대상 요소를 포함한 범위에서 마우스 포인터가 벗어나야 이벤트 발생
+		$("#box_2")
+		.css({"background-color":"pink"});
+	});
+
+
+    $(document).on("mousemove", function(e) { // 마우스 포인터를 움직이면 이벤트가 발생하여 마우스 포인터의 위치가 화면에 출력됨
+		$(".posX").text(e.pageX);
+		$(".posY").text(e.pageY);
+	});
+});
+</script>
+</head>
+<body>
+	<p><button class="btn1">Mouse Over/Mouse Out</button></p>
+	<p class="txt1">내용1</p>
+	<p><button class="btn2">Hover</button></p>
+	<p class="txt2">내용2</p>
+
+    <h1>mouseout</h1>
+    <div id="box_1">
+		<p><a href="#">내용1</a></p>
+		<p><a href="#">내용2</a></p>
+		<p><a href="#">내용3</a></p>
+    </div>
+
+    <h1>mouseleave</h1>
+    <div id="box_2">
+		<p><a href="#">내용4</a></p>
+		<p><a href="#">내용5</a></p>
+		<p><a href="#">내용6</a></p>
+    </div>
+
+
+    <h1>mousemove</h1>
+    <p>X : <span class="posX">0</span>px</p>
+    <p>Y : <span class="posY">0</span>px</p>
+</body>
+</html>
